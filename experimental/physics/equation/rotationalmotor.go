@@ -5,13 +5,13 @@
 package equation
 
 import (
-	"github.com/g3n/engine/math32"
+	"github.com/schidstorm/engine/math32"
 )
 
 // RotationalMotor is a rotational motor constraint equation.
 // Tries to keep the relative angular velocity of the bodies to a given value.
 type RotationalMotor struct {
-	Equation // TODO maybe this should embed Rotational instead ?
+	Equation                    // TODO maybe this should embed Rotational instead ?
 	axisA       *math32.Vector3 // World oriented rotational axis
 	axisB       *math32.Vector3 // World oriented rotational axis
 	targetSpeed float32         // Target speed

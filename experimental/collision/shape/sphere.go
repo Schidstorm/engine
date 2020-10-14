@@ -4,7 +4,7 @@
 
 package shape
 
-import "github.com/g3n/engine/math32"
+import "github.com/schidstorm/engine/math32"
 
 // Sphere is an analytical collision sphere.
 type Sphere struct {
@@ -54,13 +54,13 @@ func (s *Sphere) Area() float32 {
 // Volume computes and returns the volume of the analytical collision sphere.
 func (s *Sphere) Volume() float32 {
 
-	return (4/3) * math32.Pi * s.radius * s.radius * s.radius
+	return (4 / 3) * math32.Pi * s.radius * s.radius * s.radius
 }
 
 // RotationalInertia computes and returns the rotational inertia of the analytical collision sphere.
 func (s *Sphere) RotationalInertia(mass float32) math32.Matrix3 {
 
-	v := (2/5) * mass * s.radius * s.radius
+	v := (2 / 5) * mass * s.radius * s.radius
 	return *math32.NewMatrix3().Set(
 		v, 0, 0,
 		0, v, 0,

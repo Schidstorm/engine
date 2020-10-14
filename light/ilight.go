@@ -5,8 +5,8 @@
 package light
 
 import (
-	"github.com/g3n/engine/core"
-	"github.com/g3n/engine/gls"
+	"github.com/schidstorm/engine/core"
+	"github.com/schidstorm/engine/gls"
 )
 
 // ILight is the interface that must be implemented for all light types.

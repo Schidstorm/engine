@@ -9,9 +9,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/g3n/engine/gls"
-	"github.com/g3n/engine/material"
-	"github.com/g3n/engine/renderer/shaders"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/material"
+	"github.com/schidstorm/engine/renderer/shaders"
 	"strconv"
 )
 

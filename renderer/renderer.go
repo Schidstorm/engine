@@ -6,15 +6,15 @@
 package renderer
 
 import (
-	"github.com/g3n/engine/camera"
-	"github.com/g3n/engine/core"
-	"github.com/g3n/engine/gls"
-	"github.com/g3n/engine/graphic"
-	"github.com/g3n/engine/gui"
-	"github.com/g3n/engine/light"
-	"github.com/g3n/engine/material"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/util/logger"
+	"github.com/schidstorm/engine/camera"
+	"github.com/schidstorm/engine/core"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/graphic"
+	"github.com/schidstorm/engine/gui"
+	"github.com/schidstorm/engine/light"
+	"github.com/schidstorm/engine/material"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/util/logger"
 	"sort"
 )
 

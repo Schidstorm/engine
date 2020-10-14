@@ -5,10 +5,10 @@
 package gui
 
 import (
-	"github.com/g3n/engine/gui/assets"
-	"github.com/g3n/engine/gui/assets/icon"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/text"
+	"github.com/schidstorm/engine/gui/assets"
+	"github.com/schidstorm/engine/gui/assets/icon"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/text"
 )
 
 // NewLightStyle creates and returns a pointer to the a new "light" style

@@ -5,9 +5,9 @@
 package gui
 
 import (
-	"github.com/g3n/engine/gui/assets/icon"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/window"
+	"github.com/schidstorm/engine/gui/assets/icon"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/window"
 
 	"time"
 )

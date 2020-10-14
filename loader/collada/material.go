@@ -6,9 +6,9 @@ package collada
 
 import (
 	"fmt"
-	"github.com/g3n/engine/material"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/texture"
+	"github.com/schidstorm/engine/material"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/texture"
 	"path/filepath"
 	"strings"
 )

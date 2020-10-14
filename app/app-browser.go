@@ -8,8 +8,8 @@ package app
 
 import (
 	"fmt"
-	"github.com/g3n/engine/renderer"
-	"github.com/g3n/engine/window"
+	"github.com/schidstorm/engine/renderer"
+	"github.com/schidstorm/engine/window"
 	"syscall/js"
 	"time"
 )

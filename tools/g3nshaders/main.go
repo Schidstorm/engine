@@ -15,6 +15,7 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
+	"github.com/schidstorm/engine/filesystem"
 	"go/format"
 	"io/ioutil"
 	"log"
@@ -150,15 +151,8 @@ func main() {
 // processDir processes recursively all shaders files in the specified directory
 func processDir(dir string, include bool) {
 
-	// Open directory to process
-	f, err := os.Open(dir)
-	if err != nil {
-		panic(err)
-	}
-	defer f.Close()
-
 	// Read all file entries from the directory
-	finfos, err := f.Readdir(0)
+	finfos, err := filesystem.Namespace().ReadDir(dir)
 	if err != nil {
 		panic(err)
 	}
@@ -227,7 +221,7 @@ func processFile(file string, include bool) {
 	}
 
 	// Reads all file data
-	f, err := os.Open(file)
+	f, err := filesystem.Namespace().Open(file)
 	if err != nil {
 		panic(err)
 	}

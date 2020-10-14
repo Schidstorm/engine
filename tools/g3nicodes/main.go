@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
+	"github.com/schidstorm/engine/filesystem"
 	"go/format"
 	"io"
 	"log"
@@ -47,7 +48,7 @@ func main() {
 		log.Fatal("Input file not supplied")
 		return
 	}
-	finput, err := os.Open(flag.Args()[0])
+	finput, err := filesystem.Namespace().Open(flag.Args()[0])
 	if err != nil {
 		log.Fatal(err)
 		return

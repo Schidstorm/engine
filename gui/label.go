@@ -5,10 +5,10 @@
 package gui
 
 import (
-	"github.com/g3n/engine/gls"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/text"
-	"github.com/g3n/engine/texture"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/text"
+	"github.com/schidstorm/engine/texture"
 )
 
 // Label is a panel which contains a texture with text.

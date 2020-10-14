@@ -10,24 +10,24 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
+	"github.com/schidstorm/engine/filesystem"
 	"image"
 	"image/draw"
 	"io"
 	"io/ioutil"
-	"os"
 	"path/filepath"
 	"strings"
 	"unsafe"
 
-	"github.com/g3n/engine/animation"
-	"github.com/g3n/engine/camera"
-	"github.com/g3n/engine/core"
-	"github.com/g3n/engine/geometry"
-	"github.com/g3n/engine/gls"
-	"github.com/g3n/engine/graphic"
-	"github.com/g3n/engine/material"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/texture"
+	"github.com/schidstorm/engine/animation"
+	"github.com/schidstorm/engine/camera"
+	"github.com/schidstorm/engine/core"
+	"github.com/schidstorm/engine/geometry"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/graphic"
+	"github.com/schidstorm/engine/material"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/texture"
 )
 
 // ParseJSON parses the glTF data from the specified JSON file
@@ -35,7 +35,7 @@ import (
 func ParseJSON(filename string) (*GLTF, error) {
 
 	// Open file
-	f, err := os.Open(filename)
+	f, err := filesystem.Namespace().Open(filename)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func ParseJSONReader(r io.Reader, path string) (*GLTF, error) {
 func ParseBin(filename string) (*GLTF, error) {
 
 	// Open file
-	f, err := os.Open(filename)
+	f, err := filesystem.Namespace().Open(filename)
 	if err != nil {
 		return nil, err
 	}
@@ -1113,7 +1113,7 @@ func (g *GLTF) loadFileBytes(uri string) ([]byte, error) {
 	log.Debug("Loading File: %v", uri)
 
 	fpath := filepath.Join(g.path, uri)
-	f, err := os.Open(fpath)
+	f, err := filesystem.Namespace().Open(fpath)
 	if err != nil {
 		return nil, err
 	}

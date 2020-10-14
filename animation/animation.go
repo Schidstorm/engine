@@ -5,7 +5,7 @@
 // Package animation
 package animation
 
-import "github.com/g3n/engine/util/logger"
+import "github.com/schidstorm/engine/util/logger"
 
 // Package logger
 var log = logger.New("ANIMATION", logger.Default)

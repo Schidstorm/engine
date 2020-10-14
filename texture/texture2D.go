@@ -7,15 +7,14 @@ package texture
 
 import (
 	"fmt"
-	"github.com/g3n/engine/util/logger"
+	"github.com/schidstorm/engine/filesystem"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/util/logger"
 	"image"
 	"image/draw"
 	_ "image/gif"
 	_ "image/jpeg"
 	_ "image/png"
-	"os"
-
-	"github.com/g3n/engine/gls"
 )
 
 // Package logger
@@ -316,7 +315,7 @@ func (t *Texture2D) Compressed() bool {
 func DecodeImage(imgfile string) (*image.RGBA, error) {
 
 	// Open image file
-	file, err := os.Open(imgfile)
+	file, err := filesystem.Namespace().Open(imgfile)
 	if err != nil {
 		return nil, err
 	}

@@ -13,7 +13,7 @@
 package gls
 
 import (
-	"github.com/g3n/engine/util/logger"
+	"github.com/schidstorm/engine/util/logger"
 	"math"
 	"unsafe"
 )

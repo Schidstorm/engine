@@ -9,9 +9,9 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/g3n/engine/gls"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/util/logger"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/util/logger"
 )
 
 // Package logger

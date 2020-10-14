@@ -5,10 +5,10 @@
 package camera
 
 import (
-	"github.com/g3n/engine/core"
-	"github.com/g3n/engine/gui"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/window"
+	"github.com/schidstorm/engine/core"
+	"github.com/schidstorm/engine/gui"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/window"
 	"math"
 )
 

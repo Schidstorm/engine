@@ -5,7 +5,7 @@
 package obj
 
 import (
-	"github.com/g3n/engine/util/logger"
+	"github.com/schidstorm/engine/util/logger"
 )
 
 // Package logger

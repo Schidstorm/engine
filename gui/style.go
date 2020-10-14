@@ -5,8 +5,8 @@
 package gui
 
 import (
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/text"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/text"
 )
 
 // Style contains the styles for all GUI elements

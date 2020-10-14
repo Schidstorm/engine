@@ -4,7 +4,7 @@
 
 package shape
 
-import "github.com/g3n/engine/math32"
+import "github.com/schidstorm/engine/math32"
 
 // Plane is an analytical collision Plane.
 // A plane, facing in the +Z direction. The plane has its surface at z=0 and everything below z=0 is assumed to be solid.
@@ -16,7 +16,7 @@ type Plane struct {
 func NewPlane() *Plane {
 
 	p := new(Plane)
-	p.normal = *math32.NewVector3(0,0,1) //*normal
+	p.normal = *math32.NewVector3(0, 0, 1) //*normal
 	return p
 }
 

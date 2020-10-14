@@ -8,10 +8,11 @@ package app
 
 import (
 	"fmt"
-	"github.com/g3n/engine/audio/al"
-	"github.com/g3n/engine/audio/vorbis"
-	"github.com/g3n/engine/renderer"
-	"github.com/g3n/engine/window"
+	"github.com/schidstorm/engine/audio/al"
+	"github.com/schidstorm/engine/audio/vorbis"
+	"github.com/schidstorm/engine/renderer"
+	"github.com/schidstorm/engine/window"
+	"golang.org/x/tools/godoc/vfs"
 	"time"
 )
 
@@ -31,6 +32,7 @@ type Application struct {
 	startTime      time.Time          // Application start time
 	frameStart     time.Time          // Frame start time
 	frameDelta     time.Duration      // Duration of last frame
+	namespace      vfs.NameSpace
 }
 
 // App returns the Application singleton, creating it the first time.
@@ -55,6 +57,7 @@ func App() *Application {
 	if err != nil {
 		panic(fmt.Errorf("AddDefaultShaders:%v", err))
 	}
+	a.namespace = vfs.NewNameSpace()
 	return a
 }
 
@@ -152,4 +155,13 @@ func (a *Application) openDefaultAudioDevice() error {
 	log.Info("%s version: %s", al.GetString(al.Vendor), al.GetString(al.Version))
 	log.Info("%s", vorbis.VersionString())
 	return nil
+}
+
+func (a *Application) Namespace() vfs.NameSpace {
+	return a.namespace
+}
+
+func (a *Application) SetNamespace(namespace vfs.NameSpace) *Application {
+	a.namespace = namespace
+	return a
 }

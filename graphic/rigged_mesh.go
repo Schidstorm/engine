@@ -5,10 +5,10 @@
 package graphic
 
 import (
-	"github.com/g3n/engine/gls"
+	"github.com/schidstorm/engine/core"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/math32"
 	"strconv"
-	"github.com/g3n/engine/core"
-	"github.com/g3n/engine/math32"
 )
 
 // MaxBoneInfluencers is the maximum number of bone influencers per vertex.

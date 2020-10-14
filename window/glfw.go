@@ -9,15 +9,15 @@ package window
 import (
 	"bytes"
 	"fmt"
+	"github.com/schidstorm/engine/filesystem"
 	"image"
 	_ "image/png"
-	"os"
 	"runtime"
 
-	"github.com/g3n/engine/core"
-	"github.com/g3n/engine/gls"
-	"github.com/g3n/engine/gui/assets"
 	"github.com/go-gl/glfw/v3.3/glfw"
+	"github.com/schidstorm/engine/core"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/gui/assets"
 )
 
 // Keycodes
@@ -454,7 +454,7 @@ func (w *GlfwWindow) SetCursor(cursor Cursor) {
 func (w *GlfwWindow) CreateCursor(imgFile string, xhot, yhot int) (Cursor, error) {
 
 	// Open image file
-	file, err := os.Open(imgFile)
+	file, err := filesystem.Namespace().Open(imgFile)
 	if err != nil {
 		return 0, err
 	}

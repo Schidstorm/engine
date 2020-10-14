@@ -5,16 +5,16 @@
 package equation
 
 import (
-	"github.com/g3n/engine/math32"
+	"github.com/schidstorm/engine/math32"
 )
 
 // Cone is a cone constraint equation.
 // Works to keep the given body world vectors aligned, or tilted within a given angle from each other.
 type Cone struct {
 	Equation
-	axisA    *math32.Vector3 // Local axis in A
-	axisB    *math32.Vector3 // Local axis in B
-	angle    float32         // The "cone angle" to keep
+	axisA *math32.Vector3 // Local axis in A
+	axisB *math32.Vector3 // Local axis in B
+	angle float32         // The "cone angle" to keep
 }
 
 // NewCone creates and returns a pointer to a new Cone equation object.

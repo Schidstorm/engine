@@ -6,13 +6,13 @@ package gui
 
 import (
 	"fmt"
-	"github.com/g3n/engine/core"
-	"github.com/g3n/engine/geometry"
-	"github.com/g3n/engine/gls"
-	"github.com/g3n/engine/graphic"
-	"github.com/g3n/engine/material"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/renderer/shaders"
+	"github.com/schidstorm/engine/core"
+	"github.com/schidstorm/engine/geometry"
+	"github.com/schidstorm/engine/gls"
+	"github.com/schidstorm/engine/graphic"
+	"github.com/schidstorm/engine/material"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/renderer/shaders"
 	"math"
 )
 

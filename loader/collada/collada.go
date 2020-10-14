@@ -8,11 +8,11 @@ package collada
 import (
 	"encoding/xml"
 	"fmt"
-	"github.com/g3n/engine/geometry"
-	"github.com/g3n/engine/material"
-	"github.com/g3n/engine/texture"
+	"github.com/schidstorm/engine/filesystem"
+	"github.com/schidstorm/engine/geometry"
+	"github.com/schidstorm/engine/material"
+	"github.com/schidstorm/engine/texture"
 	"io"
-	"os"
 )
 
 // Decoder contains all decoded data from collada file
@@ -35,7 +35,7 @@ type geomInstance struct {
 func Decode(filepath string) (*Decoder, error) {
 
 	// Opens file
-	f, err := os.Open(filepath)
+	f, err := filesystem.Namespace().Open(filepath)
 	if err != nil {
 		return nil, err
 	}

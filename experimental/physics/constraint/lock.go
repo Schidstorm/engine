@@ -5,8 +5,8 @@
 package constraint
 
 import (
-	"github.com/g3n/engine/experimental/physics/equation"
-	"github.com/g3n/engine/math32"
+	"github.com/schidstorm/engine/experimental/physics/equation"
+	"github.com/schidstorm/engine/math32"
 )
 
 // Lock constraint.
@@ -43,7 +43,7 @@ func NewLock(bodyA, bodyB IBody, maxForce float32) *Lock {
 	lc.initialize(bodyA, bodyB, &pivotA, &pivotB, maxForce)
 
 	// Store initial rotation of the bodies as unit vectors in the local body spaces
-	UnitX := math32.NewVector3(1,0,0)
+	UnitX := math32.NewVector3(1, 0, 0)
 
 	localA := bodyA.VectorToLocal(UnitX)
 	localB := bodyB.VectorToLocal(UnitX)

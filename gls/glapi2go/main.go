@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"github.com/schidstorm/engine/filesystem"
 	"io"
 	"os"
 	"regexp"
@@ -65,7 +66,7 @@ func main() {
 	fname := flag.Args()[0]
 
 	// Open input header file
-	fin, err := os.Open(fname)
+	fin, err := filesystem.Namespace().Open(fname)
 	if err != nil {
 		abort(err)
 	}

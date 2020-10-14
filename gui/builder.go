@@ -6,15 +6,15 @@ package gui
 
 import (
 	"fmt"
+	"github.com/schidstorm/engine/filesystem"
 	"io/ioutil"
-	"os"
 	"sort"
 	"strconv"
 	"strings"
 
-	"github.com/g3n/engine/gui/assets/icon"
-	"github.com/g3n/engine/math32"
-	"github.com/g3n/engine/window"
+	"github.com/schidstorm/engine/gui/assets/icon"
+	"github.com/schidstorm/engine/math32"
+	"github.com/schidstorm/engine/window"
 	"gopkg.in/yaml.v2"
 )
 
@@ -401,7 +401,7 @@ func (b *Builder) ParseString(desc string) error {
 func (b *Builder) ParseFile(filepath string) error {
 
 	// Reads all file data
-	f, err := os.Open(filepath)
+	f, err := filesystem.Namespace().Open(filepath)
 	if err != nil {
 		return err
 	}
