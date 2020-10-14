@@ -4,10 +4,10 @@ import "golang.org/x/tools/godoc/vfs"
 
 var namespace vfs.NameSpace = vfs.NewNameSpace()
 
-func Namespace() vfs.NameSpace {
+func Root() vfs.NameSpace {
 	return namespace
 }
 
-func SetNamespace(ns vfs.NameSpace) {
+func SetRoot(ns vfs.NameSpace) {
 	namespace = ns
 }

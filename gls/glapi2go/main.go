@@ -66,7 +66,7 @@ func main() {
 	fname := flag.Args()[0]
 
 	// Open input header file
-	fin, err := filesystem.Namespace().Open(fname)
+	fin, err := filesystem.Root().Open(fname)
 	if err != nil {
 		abort(err)
 	}

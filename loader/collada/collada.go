@@ -35,7 +35,7 @@ type geomInstance struct {
 func Decode(filepath string) (*Decoder, error) {
 
 	// Opens file
-	f, err := filesystem.Namespace().Open(filepath)
+	f, err := filesystem.Root().Open(filepath)
 	if err != nil {
 		return nil, err
 	}

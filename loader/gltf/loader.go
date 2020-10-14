@@ -35,7 +35,7 @@ import (
 func ParseJSON(filename string) (*GLTF, error) {
 
 	// Open file
-	f, err := filesystem.Namespace().Open(filename)
+	f, err := filesystem.Root().Open(filename)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func ParseJSONReader(r io.Reader, path string) (*GLTF, error) {
 func ParseBin(filename string) (*GLTF, error) {
 
 	// Open file
-	f, err := filesystem.Namespace().Open(filename)
+	f, err := filesystem.Root().Open(filename)
 	if err != nil {
 		return nil, err
 	}
@@ -1113,7 +1113,7 @@ func (g *GLTF) loadFileBytes(uri string) ([]byte, error) {
 	log.Debug("Loading File: %v", uri)
 
 	fpath := filepath.Join(g.path, uri)
-	f, err := filesystem.Namespace().Open(fpath)
+	f, err := filesystem.Root().Open(fpath)
 	if err != nil {
 		return nil, err
 	}

@@ -48,7 +48,7 @@ func main() {
 		log.Fatal("Input file not supplied")
 		return
 	}
-	finput, err := filesystem.Namespace().Open(flag.Args()[0])
+	finput, err := filesystem.Root().Open(flag.Args()[0])
 	if err != nil {
 		log.Fatal(err)
 		return

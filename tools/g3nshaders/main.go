@@ -152,7 +152,7 @@ func main() {
 func processDir(dir string, include bool) {
 
 	// Read all file entries from the directory
-	finfos, err := filesystem.Namespace().ReadDir(dir)
+	finfos, err := filesystem.Root().ReadDir(dir)
 	if err != nil {
 		panic(err)
 	}
@@ -221,7 +221,7 @@ func processFile(file string, include bool) {
 	}
 
 	// Reads all file data
-	f, err := filesystem.Namespace().Open(file)
+	f, err := filesystem.Root().Open(file)
 	if err != nil {
 		panic(err)
 	}

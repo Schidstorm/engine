@@ -454,7 +454,7 @@ func (w *GlfwWindow) SetCursor(cursor Cursor) {
 func (w *GlfwWindow) CreateCursor(imgFile string, xhot, yhot int) (Cursor, error) {
 
 	// Open image file
-	file, err := filesystem.Namespace().Open(imgFile)
+	file, err := filesystem.Root().Open(imgFile)
 	if err != nil {
 		return 0, err
 	}

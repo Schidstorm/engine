@@ -97,7 +97,7 @@ const (
 func Decode(objpath string, mtlpath string) (*Decoder, error) {
 
 	// Opens obj file
-	fobj, err := filesystem.Namespace().Open(objpath)
+	fobj, err := filesystem.Root().Open(objpath)
 	if err != nil {
 		return nil, err
 	}
@@ -106,7 +106,7 @@ func Decode(objpath string, mtlpath string) (*Decoder, error) {
 	// Opens mtl file
 	// if mtlpath=="", then os.Open() will produce an error,
 	// causing fmtl to be nil
-	fmtl, err := filesystem.Namespace().Open(mtlpath)
+	fmtl, err := filesystem.Root().Open(mtlpath)
 	defer fmtl.Close() // will produce (ignored) err if fmtl==nil
 
 	// if fmtl==nil, the io.Reader in DecodeReader() will be (T=*os.File, V=nil)
@@ -170,7 +170,7 @@ func DecodeReader(objreader, mtlreader io.Reader) (*Decoder, error) {
 				mtllibPath = filepath.Join(objdir, dec.Matlib)
 				dec.mtlDir = objdir // NOTE (quillaja): should this be set?
 			}
-			mtlf, errMTL := filesystem.Namespace().Open(mtllibPath)
+			mtlf, errMTL := filesystem.Root().Open(mtllibPath)
 			defer mtlf.Close()
 			if errMTL == nil {
 				err = dec.parse(mtlf, dec.parseMtlLine) // will set err to nil if successful
@@ -186,7 +186,7 @@ func DecodeReader(objreader, mtlreader io.Reader) (*Decoder, error) {
 				mtlpath = objdir + ".mtl"
 				dec.mtlDir = objdir // NOTE (quillaja): should this be set?
 			}
-			mtlf, errMTL := filesystem.Namespace().Open(mtlpath)
+			mtlf, errMTL := filesystem.Root().Open(mtlpath)
 			defer mtlf.Close()
 			if errMTL == nil {
 				err = dec.parse(mtlf, dec.parseMtlLine) // will set err to nil if successful

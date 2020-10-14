@@ -315,7 +315,7 @@ func (t *Texture2D) Compressed() bool {
 func DecodeImage(imgfile string) (*image.RGBA, error) {
 
 	// Open image file
-	file, err := filesystem.Namespace().Open(imgfile)
+	file, err := filesystem.Root().Open(imgfile)
 	if err != nil {
 		return nil, err
 	}

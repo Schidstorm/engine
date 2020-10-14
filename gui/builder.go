@@ -401,7 +401,7 @@ func (b *Builder) ParseString(desc string) error {
 func (b *Builder) ParseFile(filepath string) error {
 
 	// Reads all file data
-	f, err := filesystem.Namespace().Open(filepath)
+	f, err := filesystem.Root().Open(filepath)
 	if err != nil {
 		return err
 	}
